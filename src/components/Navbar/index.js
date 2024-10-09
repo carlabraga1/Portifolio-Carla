@@ -33,15 +33,14 @@ const NavContainer = styled.div`
 `;
 
 const NavLogo = styled(LinkR)`
+  display: flex;
+  align-items: center;
   width: 80%;
   padding: 0 6px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
   text-decoration: none;
-  @media (max-width: 640px) {
-    padding: 0 0px;
-  }
+  color: inherit;
 `;
 
 const NavItems = styled.ul`
@@ -121,11 +120,7 @@ const MobileIcon = styled.div`
   }
 `;
 
-const Span = styled.div`
-  padding: 0 4px;
-  font-weight: bold;
-  font-size: 18px;
-`;
+
 const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -159,6 +154,10 @@ const MobileLink = styled.a`
     border-bottom: 2px solid ${({ theme }) => theme.primary};
   }
 `;
+const ColorText = styled.div`
+  color: ${({ theme }) => theme.primary};
+  font-size: 40px;
+`;
 
 const Navbar = () => {
   const [Open, setOpen] = React.useState(false);
@@ -167,17 +166,9 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <NavLogo to="/">
-          <a
-            style={{
-              display: "flex",
-              alignItems: "center",
-              color: "white",
-              marginBottom: "20;",
-              cursor: "pointer",
-            }}
-          >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
-          </a>
+        <ColorText>&lt;</ColorText><div  style={{ color: theme.text_primary }}>Carla</div>
+          <div style={{ color: theme.primary }}>/</div ><div style={{ color: theme.text_primary }}>Dev</div>
+          <ColorText>&gt;</ColorText>
         </NavLogo>
 
         <MobileIcon>

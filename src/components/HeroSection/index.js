@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from 'typewriter-effect';
+import EuImg from "../../images/eu.jpg";
 
 const HeroContainer = styled.div`
   background-color: ${({ theme }) => theme.card_light};
@@ -180,6 +181,27 @@ filter: brightness(1);
 } 
 
 `;
+
+const Img = styled.img`
+position: relative;
+width: 100%;
+height: 100%;
+max-width: 400px;
+max-height: 400px;
+border-radius: 50%;
+border: 2px solid ${({ theme }) => theme.primary};
+
+@media (max-width: 768px) {
+  max-width: 400px;
+  max-height: 400px;
+}
+
+@media (max-width: 640px) {
+  max-width: 280px;
+  max-height: 280px;
+}
+`;
+
 const Hero = () => {
   return (
     <div id="about">
@@ -208,7 +230,9 @@ const Hero = () => {
                 Check Resume
             </ResumeButton>
           </HeroLeftContainer>
-          <HeroRightContainer></HeroRightContainer>
+          <HeroRightContainer>
+            <Img src={EuImg} alt="Eu"/>
+          </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
     </div>
